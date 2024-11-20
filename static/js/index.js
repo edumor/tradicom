@@ -19,16 +19,21 @@ window.dispatchEvent(new Event('resize'));
 
 /* este script maneja el menú desplegable dropdown */
 
-document.getElementById('dropdownMenu').addEventListener('click', function() {
-    var menu = this.querySelector('.dropdown-menu');
-    menu.classList.toggle('show');
-});
-
-document.addEventListener('click', function(event) {
-    var isClickInside = document.getElementById('dropdownMenu').contains(event.target);
-    if (!isClickInside) {
-        document.querySelector('.dropdown-menu').classList.remove('show');
+document.addEventListener('DOMContentLoaded', function() {
+    var dropdownMenu = document.getElementById('dropdownMenu');
+    if (dropdownMenu) {
+        dropdownMenu.addEventListener('click', function() {
+            var menu = this.querySelector('.dropdown-menu');
+            menu.classList.toggle('show');
+        });
     }
+
+    document.addEventListener('click', function(event) {
+        var isClickInside = dropdownMenu.contains(event.target);
+        if (!isClickInside) {
+            document.querySelector('.dropdown-menu').classList.remove('show');
+        }
+    });
 });
 
 

@@ -13,7 +13,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    resp = make_response(render_template('Index.html'))
+    resp = make_response(render_template('index.html'))
     resp.set_cookie('my_cookie', 'cookie_value', samesite='Lax')  # Configura SameSite para Lax o Strict
     return resp
 
