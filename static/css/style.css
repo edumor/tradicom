@@ -1811,6 +1811,7 @@ textarea {
     margin: 0 auto; /* Centra horizontalmente */
     padding: 20px;
     border: 2px solid #000; /* Cambia el color y grosor del borde */
+    border-radius: 10px;
     background-color: #fff;
     box-shadow: 0 0 15px rgba(0, 0, 0, 0.2); /* Aumenta la sombra */
     position: fixed;
