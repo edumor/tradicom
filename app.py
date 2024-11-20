@@ -56,7 +56,8 @@ def send_email():
     msg = MIMEMultipart()
     msg['From'] = remitente
     msg['To'] = destinatario
-    msg['Cc'] = destinatario_cc  
+    if destinatario_cc:
+        msg['Cc'] = destinatario_cc  
     msg['Subject'] = asunto
 
     body = f"""
