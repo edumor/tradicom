@@ -4,7 +4,6 @@ from email.mime.text import MIMEText
 from email.mime.multipart import MIMEMultipart
 from dotenv import load_dotenv
 import os
-from threading import Thread
 
 # Recuperar las variables de entorno
 load_dotenv()
@@ -17,7 +16,7 @@ def index():
     resp.set_cookie('my_cookie', 'cookie_value', samesite='Lax')  # Configura SameSite para Lax o Strict
     return resp
 
-def send_async_email(app, msg, remitente, destinatarios, password):
+def send_email_sync(app, msg, remitente, destinatarios, password):
     with app.app_context():
         try:
             server = smtplib.SMTP('smtp.gmail.com', 587)
@@ -72,8 +71,8 @@ def send_email():
     # Crear lista de destinatarios sin duplicados
     destinatarios = list(set([destinatario] + ([destinatario_cc] if destinatario_cc else [])))
 
-    # Enviar el correo de manera asíncrona
-    Thread(target=send_async_email, args=(app, msg, remitente, destinatarios, password)).start()
+    # Enviar el correo de manera sincrónica
+    send_email_sync(app, msg, remitente, destinatarios, password)
     return jsonify({"message": "Gracias por ponerse en contacto con Tradicom S.A. nos comunicaremos con ud. a la brevedad"}), 200
 
 if __name__ == '__main__':
