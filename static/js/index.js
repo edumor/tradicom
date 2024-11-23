@@ -100,7 +100,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
 $(document).ready(function(){
     $('#myCarousel').carousel({
-      interval: 1000, // Intervalo de tiempo en milisegundos
+      interval: 1200, // Intervalo de tiempo en milisegundos
       ride: 'carousel'
     });
 });
