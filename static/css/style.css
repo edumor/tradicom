@@ -237,21 +237,21 @@ h1 {
 @media (max-width: 768px) {
     #video, .video-container, .zoom {
         width: 100vw;
-        height: 120vh;
+        height: 140vh;
     }
 
     #video {
         transform: translate(-50%, -50%);
         position: absolute;
         width: 100vw;
-        height: 120vh;
+        height: 140vh;
         z-index: 2; /* Asegúrate de que el video esté en el frente */
     }
 
     .video-container {
         position: absolute;
         width: 100vw;
-        height: 120vh;
+        height: 140vh;
         overflow: hidden; /* Permite que el contenido se muestre */
         z-index: 1; /* Asegúrate de que el contenedor esté detrás del video */
     }
@@ -364,6 +364,12 @@ h1 {
         padding-left: 0;
         padding-right: 0;
     }
+    #inicio {
+        font-size: 14px; /* Ajusta el tamaño de la fuente según sea necesario */
+    }
+    #inicio .margen-superior {
+        margin-top: 5px; /* Ajusta el margen superior según sea necesario */
+    }
 }
 
 @media (max-width: 768px) {
@@ -371,6 +377,9 @@ h1 {
         margin-top: 10px;
     }
 }
+
+
+/* Atributos de la sección Nosotros */
 
 .container_nosotros {
     margin-top: 10%;
