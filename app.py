@@ -9,6 +9,15 @@ from threading import Thread
 # Load environment variables
 load_dotenv()
 
+# Debugging: Print environment variables
+print("USER:", os.getenv('USER'))
+print("PASSWORD:", os.getenv('PASSWORD'))
+print("DESTINATARIO:", os.getenv('DESTINATARIO'))
+print("DESTINATARIO_CC:", os.getenv('DESTINATARIO_CC'))
+
+
+
+
 app = Flask(__name__)
 
 @app.route('/')
