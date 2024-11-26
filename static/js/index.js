@@ -21,7 +21,7 @@ window.dispatchEvent(new Event('resize'));
 
 document.addEventListener('DOMContentLoaded', function() {
     const carouselImages = document.querySelectorAll('.carousel-image');
-    const intervalTime = 800; // Tiempo en milisegundos entre transiciones
+    const intervalTime = 600; // Tiempo en milisegundos entre transiciones
     let currentIndex = 0;
 
     function showNextImage() {
