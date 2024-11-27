@@ -36,6 +36,7 @@ def send_async_email(app, msg, remitente, destinatarios, password):
             server.quit()
         except Exception as e:
             print(f"Error al enviar el correo: {str(e)}")
+            raise
 
 @app.route('/send_email', methods=['POST'])
 def send_email():
