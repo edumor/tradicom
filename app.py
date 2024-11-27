@@ -19,6 +19,17 @@ EMAIL_DESTINATARIO_CC = os.getenv('EMAIL_DESTINATARIO_CC')
 EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS')
 EMAIL_ASUNTO = os.getenv('EMAIL_ASUNTO')
 
+# Debugging: Print loaded environment variables
+print(f"EMAIL_HOST: {EMAIL_HOST}")
+print(f"EMAIL_HOST_USER: {EMAIL_HOST_USER}")
+print(f"EMAIL_HOST_PASSWORD: {EMAIL_HOST_PASSWORD}")
+print(f"EMAIL_PORT: {EMAIL_PORT}")
+print(f"EMAIL_DESTINATARIO: {EMAIL_DESTINATARIO}")
+print(f"EMAIL_DESTINATARIO_CC: {EMAIL_DESTINATARIO_CC}")
+print(f"EMAIL_USE_TLS: {EMAIL_USE_TLS}")
+print(f"EMAIL_ASUNTO: {EMAIL_ASUNTO}")
+
+
 app = Flask(__name__)
 
 @app.route('/')
