@@ -10,13 +10,14 @@ from threading import Thread
 load_dotenv()
 
 # Debugging: Print environment variables
-print("USER:", os.getenv('USER'))
-print("PASSWORD:", os.getenv('PASSWORD'))
-print("DESTINATARIO:", os.getenv('DESTINATARIO'))
-print("DESTINATARIO_CC:", os.getenv('DESTINATARIO_CC'))
-
-
-
+EMAIL_HOST = os.getenv('EMAIL_HOST')
+EMAIL_HOST_USER = os.getenv('EMAIL_HOST_USER')
+EMAIL_HOST_PASSWORD = os.getenv('EMAIL_HOST_PASSWORD')
+EMAIL_PORT = os.getenv('EMAIL_PORT')
+EMAIL_DESTINATARIO = os.getenv('EMAIL_DESTINATARIO')
+EMAIL_DESTINATARIO_CC = os.getenv('EMAIL_DESTINATARIO_CC')
+EMAIL_USE_TLS = os.getenv('EMAIL_USE_TLS')
+EMAIL_ASUNTO = os.getenv('EMAIL_ASUNTO')
 
 app = Flask(__name__)
 
@@ -29,8 +30,9 @@ def index():
 def send_async_email(app, msg, remitente, destinatarios, password):
     with app.app_context():
         try:
-            server = smtplib.SMTP('smtp.gmail.com', 587)
-            server.starttls()
+            server = smtplib.SMTP(EMAIL_HOST, EMAIL_PORT)
+            if EMAIL_USE_TLS.lower() == 'true':
+                server.starttls()
             server.login(remitente, password)
             server.sendmail(remitente, destinatarios, msg.as_string())
             server.quit()
@@ -50,11 +52,11 @@ def send_email():
     if not all([nombre, email, telefono, mensaje]):
         return jsonify({"message": "Campos Obligatorios no ingresados."}), 400
 
-    remitente = os.getenv('USER')
-    password = os.getenv('PASSWORD')
-    destinatario = os.getenv('DESTINATARIO')
-    destinatario_cc = os.getenv('DESTINATARIO_CC')
-    asunto = os.getenv('ASUNTO')
+    remitente = EMAIL_HOST_USER
+    password = EMAIL_HOST_PASSWORD
+    destinatario = EMAIL_DESTINATARIO
+    destinatario_cc = EMAIL_DESTINATARIO_CC
+    asunto = EMAIL_ASUNTO
 
     if not remitente or not password:
         return jsonify({"message": "Error en la configuración del servidor SMTP."}), 500
