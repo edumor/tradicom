@@ -23,7 +23,7 @@ app = Flask(__name__)
 
 @app.route('/')
 def index():
-    return render_template('Index.html')
+    return render_template('index.html')
 
 def send_async_email(app, msg, remitente, destinatarios, password):
     with app.app_context():
