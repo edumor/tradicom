@@ -34,6 +34,7 @@ def send_async_email(app, msg, remitente, destinatarios, password):
             server.login(remitente, password)
             server.sendmail(remitente, destinatarios, msg.as_string())
             server.quit()
+            print(f"Correo enviado a: {destinatarios}")
         except Exception as e:
             print(f"Error al enviar el correo: {str(e)}")
 
@@ -66,7 +67,7 @@ def send_email():
     msg['From'] = remitente
     msg['To'] = destinatario
     if destinatario_cc:
-        msg['Cc'] = destinatario_cc  
+        msg['Cc'] = destinatario_cc
     msg['Subject'] = asunto
 
     body = f"""
