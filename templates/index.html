@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        {% include 'head.html' %}
+    </head>
+    <body>
+          <!--  Patalla de la barra de navegacion -->
+        <header>
+            {% include 'navbar.html' %}
+        </header>
+          <!--  Desarrollo de pantalla video -->
+
+        <section id="video" class="px-sm-3">
+            <div class="col-12 video-container bordered-section container-fluid zoom">
+                <video id="video_inicial" src="/static/img/Video Vaca Muerta.mp4" autoplay loop muted></video>
+            </div>
+        </section>
+        
+        <!--  Patalla de inicio -->
+        <section>
+            {% include 'inicio.html' %}
+        </section>
+        <!--  Desarrollo de la pagina quienes somos -->
+        <section>
+            {% include 'nosotros.html' %}
+        </section>
+        <!--  Desarrollo de la pagina Presentacion -->
+        <section>
+            {% include 'presentacion.html' %}
+        </section>
+        <!--  Desarrollo de la pagina de Clientes  -->
+        <section>
+            {% include 'galeria.html' %}
+        </section>
+        <!-- Desarrollo de Pagina de Productos -->
+        <section>
+            {% include 'serv.html' %}
+        </section>
+        <!-- Desarrollo de la pagina de PSA -->
+        <section>
+            {% include 'psa.html' %}
+        </section>
+        <!-- Desarrollo de la pagina TSA -->
+        <section>
+            {% include 'tsa.html' %}
+        </section>
+        <!-- Desarrollo de la pagina de Contacto -->
+        <section>
+            {% include 'contacto.html' %}
+        </section>
+            
+        <!--  Desarrollo del footer -->
+        <section>
+            {% include 'footer.html' %}
+        </section>
+        
+       
+        <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
+        <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+        <script src="/static/js/index.js"></script>
+        <script src="https://smtpjs.com/v3/smtp.js"></script>
+    </body>
+</html>

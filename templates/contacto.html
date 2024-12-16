@@ -1,0 +1,51 @@
+<div id="contacto" class="section_contactos container-fluid">
+    <h1 class="titulo-contacto"><u>Puede ubicarnos</u></h1>
+    <div class="row">
+        <div class="jf_section_1 col-md-6 contact-container">
+            <h2 class="info"><strong>Argentina</strong></h2>
+            <h2 class="info2">Dirección: Perú 359, Piso 12 of. 1204.  (C1067AAG) - CABA - Rep. Argentina</h2>
+            <h2 class="info2">Teléfono: +54 11 5272-2098</h2>
+            <h2 class="info2">Email: info@tradicom.com.ar</h2>
+            <div class="map-responsive">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3904.977588366351!2d-58.37732511624193!3d-34.612210618039825!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x95bccad4594170c7%3A0x2e3399b169424061!2sPer%C3%BA%20359%2C%20C1067AAG%20Cdad.%20Aut%C3%B3noma%20de%20Buenos%20Aires!5e0!3m2!1ses-419!2sar!4v1729515859005!5m2!1ses-419!2sar" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+        <a href="https://wa.me/+5491157356497" class="btn-wsp" target="_blank">
+            <i class="fab fa-whatsapp"></i>
+        </a>
+        <div class="jf_section_1 col-md-6 contact-container">
+            <h2 class="info"><strong>Bolivia</strong></h2>
+            <h2 class="info2">Dirección: Av. José Estenssoro # 250 - Santa Cruz de la Sierra - Bolivia</h2>
+            <h2 class="info2">Teléfono: +591 3 355-9550 (Ext. 417)</h2>
+            <h2 class="info2">Email: info@tradicom.com.ar</h2>
+            <div class="map-responsive">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3799.0848192424896!2d-63.20925542601322!3d-17.78771037518697!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x93f1c2a8f3c9bd31%3A0xd6c24f99fec1cae0!2sAv.%20Jose%20Estenssoro%20350%2C%20Santa%20Cruz%20de%20la%20Sierra%2C%20Bolivia!5e0!3m2!1ses-419!2sar!4v1730989270428!5m2!1ses-419!2sar" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
+            </div>
+        </div>
+    </div>
+    <div class="row mt-5 justify-content-center">
+        <div class="col-md-8 contact-container jf_section_1">
+            <form id="contactForm" action="/send_email" method="POST">
+                <h1 class="intro">Contáctese con nosotros</h1>
+                <p class="intro2">Agradecemos el interés por contactarse con nosotros, completando el siguiente formulario</p>
+                <hr>
+                <div class="row">
+                    <input type="text" name="nombre" placeholder="Nombre y Apellido  (*)" required>
+                    <input type="text" name="empresa" placeholder="Empresa">
+                    <input type="text" name="cargo" placeholder="Cargo">
+                    <input type="text" name="email" placeholder="Email (*)" required>
+                    <input type="text" name="telefono" placeholder="Teléfono de contacto (*)" required>
+                    <textarea name="mensaje" placeholder="Escriba aquí su mensaje (*)" required></textarea>
+                    <p></p>
+                    <input class="enviar" type="submit" value="Enviar" id="boton">
+                    <p class="margen-campos">(*) Campos obligatorios</p>
+                </div>
+            </form>
+        </div>
+    </div>
+    <div id="messageBox" class="message-box">
+        <p id="messageContent"></p>
+        <div class="close-btn">
+            <button id="closeButton">Cerrar</button>
+        </div>
+    </div>
